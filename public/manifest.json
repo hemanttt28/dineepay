@@ -1,0 +1,23 @@
+{
+    "name": "Dine ePay",
+    "short_name": "Dine ePay",
+    "theme_color": "#ff6b00",
+    "background_color": "#0a0a0a",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/globe.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/globe.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

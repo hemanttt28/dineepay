@@ -1,0 +1,6 @@
+Testing POST to http://localhost:3000/api/register
+Creating user: user_1771007689171
+
+Status: 201
+Response body:
+{"message":"User registered successfully"}

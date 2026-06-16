@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  password  String
+  role      String   @default("STUDENT") // "CANTEEN" or "STUDENT"
+  collegeName String?
+  collegeId   String?  @unique
+  walletBalance Float @default(1000.00)
+  walletPin     String @default("1234")
+  createdAt DateTime @default(now())
+}
+
+model MenuItem {
+  id        String   @id @default(uuid())
+  name      String
+  price     Float
+  category  String
+  image     String?
+  available Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id          String   @id @default(uuid())
+  totalAmount Float
+  status      String   @default("PENDING") // PENDING, PAID, COMPLETED
+  items       String   // JSON string of items for simplicity in SQLite
+  paymentId   String?  // Razorpay payment ID
+  metadata    String?  // JSON string for QR data and other metadata
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
