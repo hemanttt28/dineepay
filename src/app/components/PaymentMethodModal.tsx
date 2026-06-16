@@ -192,12 +192,7 @@ export default function PaymentMethodModal({
                         alert("Payment verification error");
                     }
                 },
-                prefill: qrData ? {
-                    notes: {
-                        merchant_id: qrData.merchantId,
-                        qr_order_id: qrData.orderId,
-                    }
-                } : {},
+
                 notes: qrData ? {
                     merchant_id: qrData.merchantId,
                     qr_order_id: qrData.orderId,
